@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --color-cream-50: #fdf8f0;
+  --color-cream-100: #f9eed9;
+  --color-cream-200: #f3e0be;
+  --color-rose-50: #fef2f2;
+  --color-rose-100: #fde4e8;
+  --color-rose-200: #fbc8d4;
+  --color-rose-300: #f9a8b8;
+  --color-rose-400: #f472a0;
+  --color-rose-500: #e84887;
+  --color-rose-600: #d42a6e;
+  --color-blush-50: #fdf2f8;
+  --color-blush-100: #fce7f3;
+  --color-blush-200: #fbcfe8;
+  --color-blush-300: #f9a8d4;
+  --color-blush-400: #f472b6;
+  --color-warm-50: #faf5ef;
+  --color-warm-100: #f5ede0;
+  --color-warm-200: #e8dcc8;
+  --color-warm-300: #d4c4a8;
+  --color-warm-400: #b8a080;
+  --color-warm-500: #9a8268;
+  --color-warm-600: #7a6650;
+  --color-warm-700: #5a4a3a;
+  --color-warm-800: #3a3028;
+  --color-warm-900: #1e1a14;
+  --color-sage-50: #f0f4f0;
+  --color-sage-100: #e0e8e0;
+  --color-sage-200: #c2d2c2;
+  --color-lavender-50: #f5f0fa;
+  --color-lavender-100: #ebe0f5;
+  --color-lavender-200: #d6c2ea;
+
+  --color-apego-green: #a8d5ba;
+  --color-apego-green-light: #d4eadd;
+  --color-apego-green-dark: #5a9e72;
+  --color-apego-orange: #f5c28a;
+  --color-apego-orange-light: #fae0c0;
+  --color-apego-orange-dark: #c88a3e;
+  --color-apego-blue: #9ec5e8;
+  --color-apego-blue-light: #cee2f3;
+  --color-apego-blue-dark: #4a8ec4;
+  --color-apego-red: #f0a0a0;
+  --color-apego-red-light: #f8d0d0;
+  --color-apego-red-dark: #c85050;
+}
+
+@layer base {
+  body {
+    @apply bg-cream-50 text-warm-800 antialiased;
+    margin: 0;
+    min-height: 100dvh;
+  }
+
+  #root {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+.animate-progress {
+  animation: progressFill 0.6s ease-out forwards;
+}
+
+.option-card {
+  @apply relative rounded-2xl border-2 p-4 cursor-pointer transition-all duration-300;
+}
+
+.option-card:hover {
+  @apply shadow-md -translate-y-0.5;
+}
+
+.option-card.selected {
+  @apply shadow-lg -translate-y-1;
+}
